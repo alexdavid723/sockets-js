@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background-color: aquamarine;">
+  <div class="max-w-2xl mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden border border-purple-700">
+    <!-- Navbar -->
+    <nav class="bg-gray-700 py-2">
+      <div class="text-white font-bold text-center text-xl">Chat</div>
+    </nav>
+  
+    <!-- Formulario de usuario -->
+    <div class="bg-gray-100 py-4 px-4">
+      <div class="bg-white p-4 rounded-lg shadow-lg">
+        <h2 class="text-gray-700 font-bold mb-4 text-xl text-center">Introduce tu Nombre</h2>
+        <form id="nick-form">
+          <div class="mb-4">
+            <label for="nick-name" class="block text-gray-700 font-bold mb-2">Nombre:</label>
+            <input type="text" id="nick-name" class="w-full border border-gray-400 p-2 rounded-md" required>
+            <p class="text-red-500 text-xs mt-2" id="nick-error"></p>
+          </div>
+          <button type="submit" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline-green mt-4 w-full">
+            <i class="fas fa-sign-in-alt"></i> Acceder
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Formulario de mensajes -->
+    <div class="bg-gray-100 py-4 px-4 flex " >
+       <!-- Lista de usuarios conectados -->
+       <div class="bg-white p-4 rounded-lg shadow-lg inline-block w-1/2 ">
+        <h2 class="text-gray-700 font-bold text-xl mb-4 text-center">Usuarios conectados: </h2>
+        <div id="usernames" class="italic font-bold border rounded-lg bg-transparent">
+          <!-- Los usuarios conectados se mostrarán aquí dinámicamente con JavaScript -->
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg inline-block w-1/2">
+        <h2 class="text-gray-700 font-bold mb-4 text-xl text-center ">Chat</h2>
+        <div id="chat" class="h-64 overflow-y-scroll mb-4 border border-purple-500 rounded-lg pl-4 py-2">
+          <!-- Los mensajes se agregarán aquí dinámicamente con JavaScript -->
+        </div>
+        <form id="messages-form" class="flex">
+          
+          <input class="form-control border border-gray-400 p-2 rounded-md w-full mr-2" type="text" name="" id="message" placeholder="Escribe un mensaje...">
+          <button type="submit" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
+            <i class="fas fa-paper-plane"></i> Enviar
+          </button>
+        </form>
+      </div>
+  
+      
+    </div>
+  </div>
+  
+  
+  
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+      <script src="./js/main.js"></script>
+</body>
+</html>
